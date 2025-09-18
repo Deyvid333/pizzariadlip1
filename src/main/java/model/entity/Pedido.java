@@ -1,11 +1,31 @@
 package model.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "Pedido")
 public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false, columnDefinition = "DECIMAL(5,2)")
     private double valor;
+
+@Column(nullable = false)
     private int dataHoraPedido;
+
+@Column(nullable = true)
     private int dataHoraEntrega;
+
+@Column(length = 20, nullable = false)
     private boolean Status;
+
+    @Column(columnDefinition ="decimal(5, 2)", nullable = false)
+    private double valorPedido;
+
+    private boolean codStatus;
 
 
     public long getId() {
@@ -46,6 +66,23 @@ public class Pedido {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public double getValorPedido() {
+        return valorPedido;
+    }
+
+    public void setValorPedido(double valorPedido) {
+        this.valorPedido = valorPedido;
+    }
+
+
+    public boolean isCodStatus() {
+        return codStatus;
+    }
+
+    public void setCodStatus(boolean codStatus) {
+        this.codStatus = codStatus;
     }
 }
 

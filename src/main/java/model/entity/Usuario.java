@@ -1,16 +1,53 @@
 package model.entity;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table (name = "usuarío")
 public class Usuario {
+
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(length = 100, nullable = true)
     private String nome;
+
+    @Column(length = 45, nullable = false)
     private String email;
+
+    @Column(length = 20, nullable = false)
     private String senha;
+
+    @Column(length = 20, nullable = false)
     private String sexo;
+
+    @Column(length = 10, nullable = true)
     private String cep;
+
+    @Column(length = 45, nullable = true)
     private String cidade;
+
+    @Column(length = 15, nullable = true)
+    private String cpf;
+
+
+    @Column(length = 2, nullable = true)
     private short uf;
+
+    @Column(length = 45, nullable = true)
     private String bairro;
+
+    @Column(length = 45, nullable = true)
     private String logradouro;
+
+    @Column(length = 45, nullable = false)
+    private String tipousuario;
+
+
     private boolean codStatus;
 
 
@@ -101,4 +138,22 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String gettipousuario() {
+        return tipousuario;
+    }
+
+    public void setTipousuario(String tipousuario) {
+        this.tipousuario = tipousuario;
+    }
+
+
 }

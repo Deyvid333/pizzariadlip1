@@ -1,9 +1,22 @@
 package model.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "Pedido")
 public class ItemPedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private boolean id;
-    private int quantidade;
+
+@Column(nullable = false)
+    private int quantidadeitem;
+
+
     private boolean codStatus;
+
+    @Column(nullable = false, columnDefinition = "DECIMAL(5,2)")
     private double valorUnitario;
 
 
@@ -31,11 +44,11 @@ public class ItemPedido {
         this.codStatus = codStatus;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuantidadeitem() {
+        return quantidadeitem;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantidadeitem(int quantidadeitem) {
+        this.quantidadeitem = quantidadeitem;
     }
 }

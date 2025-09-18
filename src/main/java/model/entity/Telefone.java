@@ -1,9 +1,24 @@
 package model.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "Telefone")
 public class Telefone {
+
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  boolean id;
+
+    @Column(length = 5, nullable = false)
     private short ddd;
+
+    @Column(length = 15, nullable = false)
     private String numero;
+
+
     private boolean codStatus;
 
 
