@@ -1,4 +1,4 @@
-package model.entity;
+package com.itb.inf2dm.pizzariad.model.entity;
 
 import jakarta.persistence.*;
 
@@ -8,7 +8,7 @@ public class ItemPedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private boolean id;
+    private Long id;
 
 @Column(nullable = false)
     private int quantidadeitem;
@@ -19,21 +19,20 @@ public class ItemPedido {
     @Column(nullable = false, columnDefinition = "DECIMAL(5,2)")
     private double valorUnitario;
 
-
-    public boolean isId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(boolean id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public double getValorUnitario() {
-        return valorUnitario;
+    public int getQuantidadeitem() {
+        return quantidadeitem;
     }
 
-    public void setValorUnitario(double valorUnitario) {
-        this.valorUnitario = valorUnitario;
+    public void setQuantidadeitem(int quantidadeitem) {
+        this.quantidadeitem = quantidadeitem;
     }
 
     public boolean isCodStatus() {
@@ -44,11 +43,11 @@ public class ItemPedido {
         this.codStatus = codStatus;
     }
 
-    public int getQuantidadeitem() {
-        return quantidadeitem;
+    public double getValorUnitario() {
+        return valorUnitario;
     }
 
-    public void setQuantidadeitem(int quantidadeitem) {
-        this.quantidadeitem = quantidadeitem;
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
     }
 }

@@ -1,4 +1,4 @@
-package model.entity;
+package com.itb.inf2dm.pizzariad.model.entity;
 
 import jakarta.persistence.*;
 

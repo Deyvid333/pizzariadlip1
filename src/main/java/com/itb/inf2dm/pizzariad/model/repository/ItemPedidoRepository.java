@@ -1,6 +1,6 @@
-package model.Repository;
+package com.itb.inf2dm.pizzariad.model.repository;
 
-import model.entity.ItemPedido;
+import com.itb.inf2dm.pizzariad.model.entity.ItemPedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

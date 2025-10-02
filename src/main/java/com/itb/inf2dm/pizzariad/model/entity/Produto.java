@@ -1,4 +1,4 @@
-package model.entity;
+package com.itb.inf2dm.pizzariad.model.entity;
 
 import jakarta.persistence.*;
 
@@ -10,7 +10,7 @@ public class Produto {
 
     @Id // pk
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-incremento sequencial 1 em 1
-    private long id;
+    private Long id;
 
     @Column(length = 100, nullable = false) // length qtde max de caracteres, nullble: false (NOT NULL), true  (null)
     private String nome;
